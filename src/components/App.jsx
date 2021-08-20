@@ -25,7 +25,7 @@ class App extends Component {
   render() { 
     return ( 
       <div>
-        <h1>Hello</h1>
+        <h1>YouTube Clone</h1>
         <VideoPlayer />
         <button onClick={() => this.getYoutubeVideos()}>click me for reasons</button>
         <SearchBar />

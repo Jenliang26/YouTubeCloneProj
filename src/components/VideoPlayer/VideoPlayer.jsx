@@ -6,7 +6,6 @@ const VideoPlayer = () => {
   let thing = "J3Fgfq_6lbA"
   return (
     <div>
-      <h1>hello from video player</h1>
         <iframe id="ytplayer" type="text/html" width="640" height="360"
         src={`https://www.youtube.com/embed/${thing}?autoplay=1&origin=http://example.com`}
         frameborder="0"></iframe>
