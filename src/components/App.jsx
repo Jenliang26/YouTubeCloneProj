@@ -11,7 +11,9 @@ import CommentsSection from './CommentsSection/CommentsSection';
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { }
+    this.state = { 
+      videoSearchResults:[]
+    }
   }
 
   async getYoutubeVideos(){
@@ -21,10 +23,13 @@ class App extends Component {
       // console.log(response.data.items)
       
       let relatedVideos = response.data.items
+      let videoArray = []
       for (let i = 0; i < relatedVideos.length; i++) {
         console.log(relatedVideos[i].id.videoId)
+        videoArray.push(relatedVideos[i].id.videoId)
       }
 
+      this.setState({videoSearchResults: videoArray})
     }
     catch(e){
       console.log(e)
@@ -39,7 +44,7 @@ class App extends Component {
         <VideoPlayer />
         <button onClick={() => this.getYoutubeVideos()}>click me for reasons</button>
         <SearchBar />
-        <RelatedVideos videos={this.getYoutubeVideos}/>
+        <RelatedVideos videos={this.state.videoSearchResults}/>
         <CommentsSection /> 
       </div>
      );
