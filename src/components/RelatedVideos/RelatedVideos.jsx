@@ -6,7 +6,7 @@ const RelatedVideos = (props) => {
   return ( 
     <div>
       <h1>Related Videos</h1>
-
+      {/* props.videos.map(video) => {} */}
     </div>
    );
 }
