@@ -1,0 +1,10 @@
+html {
+  background-image: 
+    repeating-linear-gradient(
+      -45deg,
+      #ffffff 0px,
+      #ffffff 10px,
+      #dddddd 10px,
+      #dddddd 20px
+    );
+}
