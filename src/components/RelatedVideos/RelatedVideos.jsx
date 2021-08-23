@@ -11,14 +11,10 @@ const RelatedVideos = (props) => {
       {/* props.videos.map(video) => {} */}
       <br />
       {props.videos.map((video) => {
-        return <iframe title="videoPlayer" id="ytplayer" type="text/html" width="160" height="90"
+        return <ul><iframe title="videoPlayer" id="ytplayer" type="text/html" width="160" height="90"
         src={`https://www.youtube.com/embed/${video}?autoplay=0&origin=http://example.com`}
-        frameborder="0"></iframe>
+        frameborder="0"></iframe></ul>
       })}
-      
-      
-
-        
     </div>
   );
 }
