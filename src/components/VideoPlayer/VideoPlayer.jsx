@@ -13,9 +13,17 @@ class VideoPlayer extends Component {
   render() { 
     return ( 
       <div>
-        <iframe title="videoPlayer" id="ytplayer" type="text/html" width="640" height="360"
+        <iframe 
+        title="videoPlayer"
+        allowFullScreen="allowfullscreen" 
+        id="ytplayer" 
+        type="text/html" 
+        width="640" 
+        height="360"
         src={`https://www.youtube.com/embed/${this.state.video_id}?autoplay=0&origin=http://example.com`}
-        frameborder="0"></iframe>
+        frameborder="0">
+        
+        </iframe>
 
         
       </div>
