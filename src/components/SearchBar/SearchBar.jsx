@@ -2,7 +2,7 @@ import React from 'react'
 
 const SearchBar = () => {
     return(
-        <h1>Hello from search bar</h1>
+        <h1>Search Bar</h1>
     )
 }
 
