@@ -1,8 +1,13 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-const RelatedVideos = () => {
+const RelatedVideos = (props) => {
+  // const [relatedVideos, setRelatedVideos] = useState([])
+
   return ( 
-    <h1>Related Videos</h1>
+    <div>
+      <h1>Related Videos</h1>
+
+    </div>
    );
 }
  
