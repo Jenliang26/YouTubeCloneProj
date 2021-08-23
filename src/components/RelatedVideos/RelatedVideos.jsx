@@ -6,9 +6,18 @@ const RelatedVideos = (props) => {
   return ( 
     <div>
       <h1>Related Videos</h1>
+      <button onClick={() => console.log(props.videos)}>give me the fuckin data!
+    </button>
       {/* props.videos.map(video) => {} */}
+      
+      
+
+        
     </div>
-   );
+  );
 }
- 
+
+
+
+
 export default RelatedVideos;

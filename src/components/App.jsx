@@ -16,6 +16,10 @@ class App extends Component {
     }
   }
 
+  componentDidMount() {
+    this.getYoutubeVideos()
+  }
+
   async getYoutubeVideos(){
     try{
       let response = await axios.get(`https://www.googleapis.com/youtube/v3/search?q=panda&key=${Key}&part=snippet`)
