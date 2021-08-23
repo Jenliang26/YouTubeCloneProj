@@ -1,13 +1,15 @@
 import React from 'react';
 import './VideoPlayer.css'
-import Iframe from 'react-iframe';
 
 const VideoPlayer = () => {
-  let thing = "J3Fgfq_6lbA"
+  // let thing = "J3Fgfq_6lbA"
+  let thing = "W0quDfpfRUQ"
+
+  
   return (
     <div>
-        <iframe id="ytplayer" type="text/html" width="640" height="360"
-        src={`https://www.youtube.com/embed/${thing}?autoplay=1&origin=http://example.com`}
+        <iframe title="videoPlayer" id="ytplayer" type="text/html" width="640" height="360"
+        src={`https://www.youtube.com/embed/${thing}?autoplay=0&origin=http://example.com`}
         frameborder="0"></iframe>
     </div>
   );

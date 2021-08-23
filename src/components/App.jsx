@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import VideoPlayer from './VideoPlayer/VideoPlayer';
 import SearchBar from './SearchBar/SearchBar';
 import Key from './apikey'; 
+import RelatedVideos from './RelatedVideos/RelatedVideos';
 
 class App extends Component {
   constructor(props) {
@@ -22,6 +23,8 @@ class App extends Component {
       console.log(e)
     }
   }
+
+  
   render() { 
     return ( 
       <div>
@@ -29,6 +32,7 @@ class App extends Component {
         <VideoPlayer />
         <button onClick={() => this.getYoutubeVideos()}>click me for reasons</button>
         <SearchBar />
+        <RelatedVideos />
       </div>
      );
   }
