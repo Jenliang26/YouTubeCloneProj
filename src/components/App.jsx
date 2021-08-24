@@ -22,34 +22,16 @@ class App extends Component {
     this.getYoutubeVideos()
   }
 
-
-
-
-
-  // search? //
-  // q=searchterm
-  // type=video&
-  // key=key&
-  // part=snippet
-
-
   async getYoutubeVideos(){
     try{
-      let response = await axios.get(`https://www.googleapis.com/youtube/v3/search?q=${this.state.searchTerm}&type=video&key=${Key}&part=snippet`,{
-        params: {
-
-        }
-      })
+      let response = await axios.get(`https://www.googleapis.com/youtube/v3/search?q=${this.state.searchTerm}&type=video&key=${Key}&part=snippet`)
       console.log(response.data)
-      console.log(response.data.items[0].snippet)
-      
       let relatedVideos = response.data.items
       let videoArray = []
       for (let i = 0; i < relatedVideos.length; i++) {
         console.log(relatedVideos[i].id.videoId)
         videoArray.push(relatedVideos[i].id.videoId)
       }
-
       this.setState({videoSearchResults: videoArray})
     }
     catch(e){
@@ -66,10 +48,7 @@ class App extends Component {
         <h1>YouTube Clone</h1>
         <VideoPlayer videoId="W0quDfpfRUQ"/>
         <button onClick={() => this.getYoutubeVideos()}>click me for reasons</button>
-        <SearchBar 
-          search={this.state.videoSearch}
-          getVideos={this.getYoutubeVideos}
-          />
+        <SearchBar getVideos={this.getYoutubeVideos} />
         <RelatedVideos videos={this.state.videoSearchResults}/>
         <CommentsSection /> 
       </div>
@@ -78,3 +57,4 @@ class App extends Component {
 }
  
 export default App;
+
