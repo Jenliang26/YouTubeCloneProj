@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import axios from from 'axios';
+import axios from 'axios';
+
 
 const CommentsSection extends Component {
   constructor(props) {
