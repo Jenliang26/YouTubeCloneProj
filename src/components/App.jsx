@@ -12,7 +12,9 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = { 
-      videoSearchResults:[]
+      videoSearchResults: [],
+      videoSearch: [],
+      searchTerm: "panda"
     }
   }
 
@@ -20,11 +22,26 @@ class App extends Component {
     this.getYoutubeVideos()
   }
 
+
+
+
+
+  // search? //
+  // q=searchterm
+  // type=video&
+  // key=key&
+  // part=snippet
+
+
   async getYoutubeVideos(){
     try{
-      let response = await axios.get(`https://www.googleapis.com/youtube/v3/search?q=panda&key=${Key}&part=snippet`)
-      // console.log(response.data)
-      // console.log(response.data.items)
+      let response = await axios.get(`https://www.googleapis.com/youtube/v3/search?q=${this.state.searchTerm}&type=video&key=${Key}&part=snippet`,{
+        params: {
+
+        }
+      })
+      console.log(response.data)
+      console.log(response.data.items[0].snippet)
       
       let relatedVideos = response.data.items
       let videoArray = []
@@ -40,14 +57,19 @@ class App extends Component {
     }
   }
 
+  //function that will replace value of state.searchTerm with the parameter
+  //this function gets passed in to SearchBar component as props so it can be called when search is submitted
    
   render() { 
     return ( 
       <div>
         <h1>YouTube Clone</h1>
-        <VideoPlayer />
+        <VideoPlayer videoId="W0quDfpfRUQ"/>
         <button onClick={() => this.getYoutubeVideos()}>click me for reasons</button>
-        <SearchBar />
+        <SearchBar 
+          search={this.state.videoSearch}
+          getVideos={this.getYoutubeVideos}
+          />
         <RelatedVideos videos={this.state.videoSearchResults}/>
         <CommentsSection /> 
       </div>

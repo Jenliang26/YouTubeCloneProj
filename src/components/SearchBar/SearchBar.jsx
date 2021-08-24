@@ -1,10 +1,29 @@
-import React from 'react'
+import axios from 'axios'
+import React, { useState, useEffect } from 'react'
+import Key from '../apikey'
 
-const SearchBar = () => {
-    // const [searchTerm, setSearchTerm] = useState('')
+const SearchBar = (props) => {
+    const [searchTerm, setSearchTerm] = useState('')
+    const [searchResults, setSearchResults] = useState([])
+
+    const search = () => {
+        const {data} = (this.props.getVideos)
+    }
 
     return(
-        <h1>Hello from search bar</h1>
+        <div>
+            <div className="form">
+                <div className="field">
+                    <label>Search</label>
+                    <input 
+                    value={searchTerm}
+                    onChange={e => setSearchTerm(e.target.value)}
+                    className="input"
+                    />
+                    <button>Submit</button>
+                </div>
+            </div>
+        </div>
     )
 }
 

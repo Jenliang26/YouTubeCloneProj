@@ -20,9 +20,8 @@ class VideoPlayer extends Component {
         type="text/html" 
         width="640" 
         height="360"
-        src={`https://www.youtube.com/embed/${this.state.video_id}?autoplay=0&origin=http://example.com`}
+        src={`https://www.youtube.com/embed/${this.props.videoId}?autoplay=0&origin=http://example.com`}
         frameborder="0">
-        
         </iframe>
 
         
@@ -32,19 +31,3 @@ class VideoPlayer extends Component {
 }
  
 export default VideoPlayer;
-
-// const VideoPlayer = () => {
-//   // let thing = "J3Fgfq_6lbA"
-//   let thing = "W0quDfpfRUQ"
-
-  
-//   return (
-//     <div>
-//         <iframe title="videoPlayer" id="ytplayer" type="text/html" width="640" height="360"
-//         src={`https://www.youtube.com/embed/${thing}?autoplay=0&origin=http://example.com`}
-//         frameborder="0"></iframe>
-//     </div>
-//   );
-// }
-
-// export default VideoPlayer;
