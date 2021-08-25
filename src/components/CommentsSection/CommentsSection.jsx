@@ -1,21 +1,23 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-
-
-const CommentsSection extends Component {
+class CommentsSection extends Component {
   constructor(props) {
     super(props);
-    this.state = {
+    this.state = { 
       video_id: '',
       comments: '',
       like: '',
-      dislike: '',
+      dislike: '', 
     }
   }
-
-  return ( 
-    <h1>Comments Section</h1>
-   );
+  render() { 
+    return ( 
+      <div>
+        <h1>hello from CommentsSection</h1>
+        <input type="text"></input><button>submit</button>
+      </div>
+     );
+  }
 }
  
 export default CommentsSection;
